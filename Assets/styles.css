@@ -1,0 +1,224 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: mm;
+}
+@font-face {
+  font-family: mm;
+  src: url(./YsabeauInfant-VariableFont_wght.ttf);
+}
+body{
+  height: 100vh;
+}
+.nav-bar{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 6%;
+  box-shadow: 0px 4px 8px 3px rgba(0,0,0,0.15);
+  align-items: center;
+}
+.logo{
+  background: linear-gradient(to bottom, rgb(0, 71, 0), rgb(5, 139, 192), rgb(126, 6, 150), rgb(2, 39, 2));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+}
+.nav-bar a{
+  background: rgb(75,75,255);
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+}
+.overlay{
+  background-color: #fafafa;
+  height: 100vh;
+  width: 100%;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show{
+  display: none;
+}
+
+
+.overlay .overlay-content{
+  --s: 25px;
+  --g :5px;  
+  
+  width: calc(3*(1.353*var(--s) + var(--g)));
+  display: grid;
+  justify-items: end;
+  aspect-ratio: 3;
+  overflow: hidden;
+  --_m: linear-gradient(90deg,#0000,#000 15px calc(100% - 15px),#0000);
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+}
+.overlay .overlay-content:before { 
+  content: "";
+  width: 200%;
+  background:
+    linear-gradient(90deg,rgb(75,75,255)50%,#0000 0),
+    conic-gradient(from -90deg at var(--s) calc(0.353*var(--s)),
+      #fff 135deg,#666 0 270deg,#aaa 0); 
+  background-blend-mode: multiply;
+  --_m:
+    linear-gradient(to bottom right,
+       #0000 calc(0.25*var(--s)),#000 0 calc(100% - calc(0.25*var(--s)) - 1.414*var(--g)),#0000 0),
+    conic-gradient(from -90deg at right var(--g) bottom var(--g),#000 90deg,#0000 0);
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  background-size:   calc(100%/3) 100%, calc(100%/6) 100%;
+  -webkit-mask-size: calc(100%/6) 100%;
+          mask-size: calc(100%/6) 100%;
+  -webkit-mask-composite: source-in;
+          mask-composite: intersect;
+  animation: l10 1s infinite linear;
+}
+@keyframes l10 {
+  to {transform:translate(calc(100%/3))}
+}
+.quote-box{
+  background: #fff;
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 30px 10px rgba(0,0,0,0.15);
+  margin-top: 50px;
+}
+.quote-box h2{
+  font-size: 32px;
+  margin-bottom: 40px;
+  position: relative;
+}
+.quote-box h2::after{
+  content: "";
+  width: 75px;
+  height: 3px;
+  border-radius: 3px;
+  background: rgb(23, 124, 229);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+blockquote {
+  font-size: 26px;
+  min-height: 110px;
+  font-style: italic;
+}
+
+.quote-box blockquote::before, .quote-box blockquote::after{
+  content: "''";
+}
+
+.quote-box span{
+  display: block;
+  margin-top: 10px;
+  float: right;
+  position: relative;
+}
+
+.quote-box span::before{
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: rgb(23, 124, 229);
+  position: absolute;
+  top: 50%;
+  left: -30px;
+}
+.tweet-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-box div{
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  column-gap: 15px;
+}
+.quote-box button{
+  background-color: rgb(75, 75, 255);
+  color: #fff;
+  border-radius: 25px;
+  width: 150px;
+  font-size: 16px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+}
+button img{
+  width: 20px;
+  margin-right: 10px;
+}
+
+.quote-box button:nth-of-type(2) {
+  background: transparent;
+  color: #333;
+  border: 1px solid rgb(75, 75, 255);
+}
+
+button:active{
+  transform: scale(1.04);
+}
+
+@media(max-width: 768px) {
+  .quote-box {
+    width: 80%;
+  }
+}
+@media(max-width: 600px) {
+  .quote-box {
+    width: 90%;
+  }
+}
+@media(max-width: 450px) {
+  h2.title {
+    font-size: 22px;
+  }
+  blockquote.quote{
+    font-size: 15px;
+  }
+  .container{
+    padding: 0 20px;
+  }
+  .quote-box {
+    width: 94%;
+  }
+}
+
+@media(max-width: 469px) {
+  .quote-box{
+    padding: 20px;
+  }
+  .quote-box div{
+    column-gap: 10px;
+  }
+ .grid-box button{
+  width: 33.3%;
+  font-size: 11px;
+  height: 30px;
+  padding: 0 7px;
+ }
+}
