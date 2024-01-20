@@ -16,12 +16,8 @@ tweet.onclick = function () {
 }
 generate.onclick = function () {
   getQuote(API_URL)
-}
-
-generate.onclick = () => {
   copy.innerHTML = "Copy"
 }
-
 
 setTimeout(() => {
   loader.classList.add("show")
