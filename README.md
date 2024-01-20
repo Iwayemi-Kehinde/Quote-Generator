@@ -19,8 +19,3 @@ Welcome to the Quote Generator repository! This web application allows users to 
 2. Open the `index.html` file in your web browser.
 
 3. Explore the Quote Generator and enjoy discovering inspiring quotes!
-
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
