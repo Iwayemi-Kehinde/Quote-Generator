@@ -13,7 +13,7 @@ Welcome to the Quote Generator repository! This web application allows users to 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/quote-generator.git
+    git clone https://github.com/Iwayemi-Kehinde/quote-generator.git
     ```
 
 2. Open the `index.html` file in your web browser.
