@@ -41,7 +41,7 @@ copy.addEventListener("click", function () {
 })
 
 setInterval(() => {
-  if(navigator.isOnline === false) {
+  if(navigator.onLine === false) {
     quote.innerHTML = "CONNECT YOUR DEVICE TO INTERNET"
     author.innerHTML = "NOT CONNECTED"
   }
