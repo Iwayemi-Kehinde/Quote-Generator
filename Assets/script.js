@@ -40,11 +40,10 @@ copy.addEventListener("click", function () {
   copyTextToClipboard()
 })
 
-if (navigator.isonLine === true) {
-  quote.innerHTML = data.content
-  author.innerHTML = data.author
-} else {
-  quote.innerHTML = "CONNECT YOUR DEVICE TO INTERNET"
-  author.innerHTML = "NOT CONNECTED"
-}
+setInterval(() => {
+  if(!navigator.isOnline) {
+    quote.innerHTML = "CONNECT YOUR DEVICE TO INTERNET"
+    author.innerHTML = "NOT CONNECTED"
+  }
+}, 1000);
 
